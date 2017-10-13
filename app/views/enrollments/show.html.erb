@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Student ID:</strong>
+  <%= Student.find(@enrollment.student.id).student_id %>
+</p>
+
+<p>
+  <strong>Course ID:</strong>
+  <%= Course.find(@enrollment.course.id).course_id %>
+</p>
+
+<p>
+  <strong>Percentage:</strong>
+  <%= @enrollment.percentage %>
+</p>
+
+<p>
+  <strong>Lettergrade:</strong>
+  <%= @enrollment.lettergrade %>
+</p>
+
+<%= link_to 'Edit', edit_enrollment_path(@enrollment) %> |
+<%= link_to 'Back', enrollments_path %>
+
+
+
