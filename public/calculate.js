@@ -4,7 +4,7 @@ var gradeIndex = ["Max","A+", "A", "A-", "B+", "B", "B-", "C+", "C", "C-", "D", 
 var gradeValue = [100.00, 95.00, 90.00, 85.00, 80.00, 75.00, 70.00, 65.00, 60.00, 55.00, 50.00, 0.00];
 var histogramResult = [0,0,0,0,0,0,0,0,0,0,0];
 
-<% @rubyGrades = []
+<% @rubyGrades = [] %>
 //var grades=  JSON.parse<%= rubyGrades.to_json %>;
 var grades = <%= JSON.parse(escape_javascript @rubyGrades.to_json) %>
 
