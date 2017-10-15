@@ -82,5 +82,5 @@ test:
 production:
   <<: *default
   database: asn2_production
-  # username: asn2
-  # password: <%= ENV['ASN2_DATABASE_PASSWORD'] %>
+  username: asn2
+  password: <%= ENV['ASN2_DATABASE_PASSWORD'] %>

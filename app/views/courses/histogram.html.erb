@@ -16,7 +16,7 @@
 	<div class="blue box" id="gradesWeight">
 
 		<div class="blue box" id="grades">
-			<form action="/courses/histogram" method="post">
+			<%= form_tag(:controller => "courses", :action => "histogram", :method => "post") do %>
 				<p class = "errorMessage" id= "entry">Lower bound</p>
 				<label for="Max" class="FormCSS" id="maxe">Max</label>
 				<input type="text" id="Max" value="100" class="FormInput" readonly>
@@ -53,7 +53,10 @@
 				
 				<label for="F" class="FormCSS" id="Fe">F</label>
 				<input class="FormInput" type="text" id="F" value="0.00" readonly>
-			</form>
+
+				<%= submit_tag "Submit" %>
+
+			<% end %>
 		</div>
 	</div>
 	<div class="blue box" id="histogram">
