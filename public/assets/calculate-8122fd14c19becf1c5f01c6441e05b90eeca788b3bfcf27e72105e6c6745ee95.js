@@ -84,7 +84,7 @@ function getValue(array, inputNum) {
 }
 //invoke by onload event to create a histogram
 function histogram() {
-	//var grades = <%= raw @getGrades.to_json %>;
+	//var grades = null;
 
 	tabulateHistogram();	//invoke function to calculate the histogram data
 	buildHistogram();	//invoke function to create a histogram
@@ -165,3 +165,4 @@ function tabulateHistogram() {
 		}
 	}
 }
+;
