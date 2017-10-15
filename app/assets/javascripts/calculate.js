@@ -11,9 +11,6 @@ function assignGrade(rubyGrades) {
 	for (i = 0; i < rubyGrades.length; i++) {
 		grades.push(rubyGrades[i]);
 	}
-
-	tabulateHistogram();	//invoke function to calculate the histogram data
-	buildHistogram();	//invoke function to create a histogram
 }
 
 //create a new histogram
@@ -91,12 +88,11 @@ function getValue(array, inputNum) {
 	return document.getElementById(array[inputNum]).value;
 }
 //invoke by onload event to create a histogram
-// function histogram() {
-// 	//var grades = <%= @getGrades.to_json %>;
+function histogram() {
 
-// 	tabulateHistogram();	//invoke function to calculate the histogram data
-// 	buildHistogram();	//invoke function to create a histogram
-// }
+	tabulateHistogram();	//invoke function to calculate the histogram data
+	buildHistogram();	//invoke function to create a histogram
+}
 //reset the histogram data
 function histogramReset() {
 	for (var i = 0; i < histogramResult.length; i++) {

@@ -61,6 +61,9 @@ class EnrollmentsController < ApplicationController
     end
   end
 
+  def assignGrade
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_enrollment

@@ -4,8 +4,8 @@
 	<%= javascript_include_tag "calculate" %>
 	<%= stylesheet_link_tag "histogram" %>
 </head>
-<body>
- <!-- onload="histogram()" -->
+<body onload="histogram()">
+ 
 	<script>
 		var rubyGrades = <%= @getGrades.to_json %>;
 		assignGrade(rubyGrades);
@@ -53,7 +53,6 @@
 				
 				<label for="F" class="FormCSS" id="Fe">F</label>
 				<input class="FormInput" type="text" id="F" value="0.00" readonly>
-
 			</form>
 		</div>
 	</div>
@@ -116,10 +115,10 @@
 		</table>
 	</div>
 
-	<div id="submit">
+<!-- 	<div id="submit">
 		<button onClick="createGradeEntry(this.id)">Submit</button>
-	</div>
-
+	</div> -->
+	<%# button_to "Submit", :method => "" %>
 
 
 </body>
