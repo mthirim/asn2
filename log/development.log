@@ -27750,3 +27750,7 @@ DEPRECATION WARNING: Using a dynamic :controller segment in a route is deprecate
 DEPRECATION WARNING: Using a dynamic :action segment in a route is deprecated and will be removed in Rails 5.2. (called from block in <top (required)> at C:/Users/MTM/Sites/Assignment2/asn2/config/routes.rb:9)
   [1m[36mEnrollment Load (0.0ms)[0m  [1m[34mSELECT  "enrollments".* FROM "enrollments" LIMIT $1[0m  [["LIMIT", 11]]
   [1m[36mEnrollment Load (0.0ms)[0m  [1m[34mSELECT "enrollments".* FROM "enrollments"[0m
+DEPRECATION WARNING: Using a dynamic :controller segment in a route is deprecated and will be removed in Rails 5.2. (called from block in <top (required)> at C:/Users/MTM/Sites/Assignment2/asn2/config/routes.rb:25)
+DEPRECATION WARNING: Using a dynamic :action segment in a route is deprecated and will be removed in Rails 5.2. (called from block in <top (required)> at C:/Users/MTM/Sites/Assignment2/asn2/config/routes.rb:25)
+DEPRECATION WARNING: Using a dynamic :controller segment in a route is deprecated and will be removed in Rails 5.2. (called from block in <top (required)> at C:/Users/MTM/Sites/Assignment2/asn2/config/routes.rb:26)
+DEPRECATION WARNING: Using a dynamic :action segment in a route is deprecated and will be removed in Rails 5.2. (called from block in <top (required)> at C:/Users/MTM/Sites/Assignment2/asn2/config/routes.rb:26)

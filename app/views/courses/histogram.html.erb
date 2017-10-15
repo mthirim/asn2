@@ -4,8 +4,8 @@
 	<%= javascript_include_tag "calculate" %>
 	<%= stylesheet_link_tag "histogram" %>
 </head>
-<body onload="histogram()">
- 
+<body  onload="histogram()">
+
 	<script>
 		var rubyGrades = <%= @getGrades.to_json %>;
 		assignGrade(rubyGrades);
