@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+
+	root 'courses#index'
+
 	get 'courses/histogram'
 
   resources :enrollments
