@@ -61,10 +61,6 @@ class EnrollmentsController < ApplicationController
     end
   end
 
-  def histogram
-    puts "hello"
-  end
-
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_enrollment

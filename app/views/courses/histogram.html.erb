@@ -1,0 +1,122 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<script type="text/javascript" src="/app/assets/javascripts/calculate.js"></script>
+	<link href="/app/assets/stylesheets/histogram.css" rel="stylesheet" type="text/css">
+</head>
+<body onload="histogram()">
+	<%= javascript_include_tag "/app/assets/javascripts/calculate.js" %>
+	<%= stylesheet_link_tag "/app/assets/stylesheets/histogram.css" %>
+	<h>Histogram Generator</h>
+	<p class="errorMessage" id="main"></p>
+	<div class="blue box" id="gradesWeight">
+
+		<div class="blue box" id="grades">
+			<form action="/courses/histogram" method="post">
+				<p class = "errorMessage" id= "entry">Lower bound</p>
+				<label for="Max" class="FormCSS" id="maxe">Max</label>
+				<input type="text" id="Max" value="100" class="FormInput" readonly>
+				
+				<label for="A+" class="FormCSS" id="A+e">A+</label>
+				<input class="FormInput" type="text" id="A+" value="95.00" onkeypress="createGradeEntry(this.id)" onkeyup="createGradeEntry(this.id)" onchange="calculateStanding(this.id)">
+				
+				<label for="A" class="FormCSS" id="Ae">A</label>
+				<input class="FormInput" type="text" id="A" value="90.00" onkeypress="createGradeEntry(this.id)" onkeyup="createGradeEntry(this.id)" onchange="calculateStanding(this.id)">
+				
+				<label for="A-" class="FormCSS" id="A-e">A-</label>
+				<input class="FormInput" type="text" id="A-" value="85.00" onkeypress="createGradeEntry(this.id)" onkeyup="createGradeEntry(this.id)" onchange="calculateStanding(this.id)">
+				
+				<label for="B+" class="FormCSS" id="B+e">B+</label>
+				<input class="FormInput" type="text" id="B+" value="80.00" onkeypress="createGradeEntry(this.id)" onkeyup="createGradeEntry(this.id)" onchange="calculateStanding(this.id)">
+				
+				<label for="B" class="FormCSS" id="Be">B</label>
+				<input class="FormInput" type="text" id="B" value="75.00" onkeypress="createGradeEntry(this.id)" onkeyup="createGradeEntry(this.id)" onchange="calculateStanding(this.id)">
+				
+				<label for="B-" class="FormCSS" id="B-e">B-</label>
+				<input class="FormInput" type="text" id="B-" value="70.00" onkeypress="createGradeEntry(this.id)" onkeyup="createGradeEntry(this.id)" onchange="calculateStanding(this.id)">
+				
+				<label for="C+" class="FormCSS" id="C+e">C+</label>
+				<input class="FormInput" type="text" id="C+" value="65.00" onkeypress="createGradeEntry(this.id)" onkeyup="createGradeEntry(this.id)" onchange="calculateStanding(this.id)">
+				
+				<label for="C" class="FormCSS" id="Ce">C</label>
+				<input class="FormInput" type="text" id="C" value="60.00" onkeypress="createGradeEntry(this.id)" onkeyup="createGradeEntry(this.id)" onchange="calculateStanding(this.id)">
+				
+				<label for="C-" class="FormCSS" id="C-e">C-</label>
+				<input class="FormInput" type="text" id="C-" value="55.00" onkeypress="createGradeEntry(this.id)" onkeyup="createGradeEntry(this.id)" onchange="calculateStanding(this.id)">
+				
+				<label for="D" class="FormCSS" id="De">D</label>
+				<input class="FormInput" type="text" id="D" value="50.00" onkeypress="createGradeEntry(this.id)" onkeyup="createGradeEntry(this.id)" onchange="calculateStanding(this.id)">	
+				
+				<label for="F" class="FormCSS" id="Fe">F</label>
+				<input class="FormInput" type="text" id="F" value="0.00" readonly>
+
+			</form>
+		</div>
+	</div>
+	<div class="blue box" id="histogram">
+		<p class = "errorMessage" id= "hist">Histogram</p>
+		<table class="ralign">
+			<tr id="rA+">
+				<td class='grades' id="A+r">A+</td>
+			</tr>
+		</table>
+		<table class="ralign">
+			<tr id="rA">
+				<td class='grades' id="Ar">A</td>
+			</tr>
+		</table>
+		<table class="ralign">
+			<tr id="rA-">
+				<td class='grades' id="A-r">A-</td>
+			</tr>
+		</table>
+		<table class="ralign">
+			<tr id="rB+">
+				<td class='grades' id="B+r">B+</td>
+			</tr>
+		</table>
+		<table class="ralign">
+			<tr id="rB">
+				<td class='grades' id="Br">B</td>
+			</tr>
+		</table>
+		<table class="ralign">
+			<tr id="rB-">
+				<td class='grades' id="B-r">B-</td>
+			</tr>
+		</table>
+		<table class="ralign">
+			<tr id="rC+">
+				<td class='grades' id="C+r">C+</td>
+			</tr>
+		</table>
+		<table class="ralign">
+			<tr id="rC">
+				<td class='grades' id="Cr">C</td>
+			</tr>
+		</table>
+		<table class="ralign">
+			<tr id="rC-">
+				<td class='grades' id="C-r">C-</td>
+			</tr>
+		</table>
+		<table class="ralign">
+			<tr id="rD">
+				<td class='grades' id="Dr">D</td>
+			</tr>
+		</table>
+		<table class="ralign">
+			<tr id="rF">
+				<td class='grades' id="Fr">F</td>
+			</tr>
+		</table>
+	</div>
+
+	<div id="submit">
+		<button onClick="createGradeEntry(this.id)">Submit</button>
+	</div>
+
+
+
+</body>
+</html>

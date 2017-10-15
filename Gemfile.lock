@@ -65,13 +65,14 @@ GEM
     erubi (1.7.0)
     execjs (2.7.0)
     ffi (1.9.18-x64-mingw32)
+    ffi (1.9.18-x86-mingw32)
     globalid (0.4.0)
       activesupport (>= 4.2.0)
     i18n (0.8.6)
     jbuilder (2.7.0)
       activesupport (>= 4.2.0)
       multi_json (>= 1.2)
-    json (2.1.0)
+    json (1.8.6)
     loofah (2.1.1)
       crass (~> 1.0.2)
       nokogiri (>= 1.5.9)
@@ -88,7 +89,10 @@ GEM
     nio4r (2.1.0)
     nokogiri (1.8.1-x64-mingw32)
       mini_portile2 (~> 2.3.0)
+    nokogiri (1.8.1-x86-mingw32)
+      mini_portile2 (~> 2.3.0)
     pg (0.21.0-x64-mingw32)
+    pg (0.21.0-x86-mingw32)
     public_suffix (3.0.0)
     puma (3.10.0)
     rack (2.0.3)
@@ -168,13 +172,15 @@ GEM
 
 PLATFORMS
   x64-mingw32
+  x86-mingw32
 
 DEPENDENCIES
   byebug
   capybara (~> 2.13)
   coffee-rails (~> 4.2)
+  coffee-script-source (~> 1.12.2)
   jbuilder (~> 2.5)
-  json (~> 2.1.0)
+  json (~> 1.8.3)
   pg (~> 0.18)
   puma (~> 3.7)
   rails (~> 5.1.4)

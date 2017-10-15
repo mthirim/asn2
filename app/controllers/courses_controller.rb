@@ -63,6 +63,19 @@ class CoursesController < ApplicationController
 
   end
 
+
+  def histogram
+    getEnrolledStudents = Enrollment.all
+
+    @getGrades = []
+
+    getEnrolledStudents.each do |getPercentage|
+      @getGrades << getPercentage.percentage
+    end
+
+  end
+
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_course
