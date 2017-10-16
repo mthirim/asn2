@@ -90,34 +90,34 @@ class CoursesController < ApplicationController
     @gradeCutoffs << params[:D]
     @gradeCutoffs << params[:F]
 
-      puts "hello hello hello"
-      puts params[:Ap]
-      puts params[:A]
-      puts params[:Am]
-      puts @gradeLetters.at(0)
-      puts @gradeLetters.at(1)
-      puts @gradeLetters.at(2)
-      puts @gradeLetters.at(3)
+    puts "hello hello hello"
+    puts params[:Ap]
+    puts params[:A]
+    puts params[:Am]
+    puts @gradeLetters.at(0)
+    puts @gradeLetters.at(1)
+    puts @gradeLetters.at(2)
+    puts @gradeLetters.at(3)
 
-      puts @gradeCutoffs.at(0)
-      puts @gradeCutoffs.at(1)
-      puts @gradeCutoffs.at(2)
+    puts @gradeCutoffs.at(0)
+    puts @gradeCutoffs.at(1)
+    puts @gradeCutoffs.at(2)
 
-      updateDatabase()
-    end
 
-    def updateDatabase
+    puts @getGrades.size
+
+
     # for i in 0..@getGrades.size
-    #   for j in 0..gradeCutoffs.size
-    #     if(@getGrades.at(i) < gradeCutoffs.at(j) && @getGrades.at(i) >= gradeCutoffs.at(j+1))
-    #       grade =  gradeLetters.at(j+1)
+    #   for j in 0..@gradeCutoffs.size
+    #     if(@getGrades.at(i) < @gradeCutoffs.at(j) && @getGrades.at(i) >= @gradeCutoffs.at(j+1))
+    #       grade =  @gradeLetters.at(j+1)
     #       Enrollment.where(student_id: @getStudents.at(i)).update(lettergrade: grade)
     #       break
     #     end
     #   end
     # end
 
-end
+  end
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_course
@@ -128,4 +128,4 @@ end
     def course_params
       params.require(:course).permit(:course_id, :description)
     end
-end
+  end
