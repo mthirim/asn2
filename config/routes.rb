@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+
+	root 'students#index'
 	get 'courses/histogram'
 	get 'courses/edit'
 	get 'courses/index'
