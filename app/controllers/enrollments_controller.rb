@@ -56,13 +56,11 @@ class EnrollmentsController < ApplicationController
   def destroy
     @enrollment.destroy
     respond_to do |format|
-      format.html { redirect_to enrollments_url, notice: 'Enrollment was successfully destroyed.' }
+      format.html { redirect_to enrollments_url, notice: 'Enrollment was successfully deleted.' }
       format.json { head :no_content }
     end
   end
 
-  def assignGrade
-  end
 
   private
     # Use callbacks to share common setup or constraints between actions.

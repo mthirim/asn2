@@ -16,54 +16,53 @@
 	<div class="blue box" id="gradesWeight">
 
 		<div class="blue box" id="grades">
-			<%= form_tag(:controller => "courses", :action => "histogram", :method => "post") do %>
+			<%= form_tag(:controller => "courses", :action => "histogram", :method => "POST") do %>
 				<p class = "errorMessage" id= "entry">Lower bound</p>
 				<label for="Max" class="FormCSS" id="maxe">Max</label>
-				<input type="text" id="Max" value="100" class="FormInput" readonly>
+				<input type="text" name="Max" id="Max" value="100" class="FormInput" readonly>
 				
-				<label for="A+" class="FormCSS" id="A+e">A+</label>
-				<input class="FormInput" type="text" id="A+" value="95.00" onkeypress="createGradeEntry(this.id)" onkeyup="createGradeEntry(this.id)" onchange="calculateStanding(this.id)">
+				<label for="A+" class="FormCSS" id="Ape">A+</label>
+				<input type="text"  name="Ap" id="Ap" value="95.00" class="FormInput" onkeypress="createGradeEntry(this.id)" onkeyup="createGradeEntry(this.id)" onchange="calculateStanding(this.id)">
 				
-				<label for="A" class="FormCSS" id="Ae">A</label>
-				<input class="FormInput" type="text" id="A" value="90.00" onkeypress="createGradeEntry(this.id)" onkeyup="createGradeEntry(this.id)" onchange="calculateStanding(this.id)">
+				<label for="AA" class="FormCSS" id="Ae">A</label>
+				<input type="text" name="A" id="A" value="90.00" class="FormInput" onkeypress="createGradeEntry(this.id)" onkeyup="createGradeEntry(this.id)" onchange="calculateStanding(this.id)">
 				
-				<label for="A-" class="FormCSS" id="A-e">A-</label>
-				<input class="FormInput" type="text" id="A-" value="85.00" onkeypress="createGradeEntry(this.id)" onkeyup="createGradeEntry(this.id)" onchange="calculateStanding(this.id)">
+				<label for="A-" class="FormCSS" id="Ame">A-</label>
+				<input type="text" name="Am" id="Am" value="85.00" class="FormInput" onkeypress="createGradeEntry(this.id)" onkeyup="createGradeEntry(this.id)" onchange="calculateStanding(this.id)">
 				
-				<label for="B+" class="FormCSS" id="B+e">B+</label>
-				<input class="FormInput" type="text" id="B+" value="80.00" onkeypress="createGradeEntry(this.id)" onkeyup="createGradeEntry(this.id)" onchange="calculateStanding(this.id)">
+				<label for="B+" class="FormCSS" id="Bpe">B+</label>
+				<input type="text" name="Bp" id="Bp" value="80.00" class="FormInput" onkeypress="createGradeEntry(this.id)" onkeyup="createGradeEntry(this.id)" onchange="calculateStanding(this.id)">
 				
-				<label for="B" class="FormCSS" id="Be">B</label>
-				<input class="FormInput" type="text" id="B" value="75.00" onkeypress="createGradeEntry(this.id)" onkeyup="createGradeEntry(this.id)" onchange="calculateStanding(this.id)">
+				<label for="BB" class="FormCSS" id="Be">B</label>
+				<input type="text" name="B" id="B" value="75.00" class="FormInput" onkeypress="createGradeEntry(this.id)" onkeyup="createGradeEntry(this.id)" onchange="calculateStanding(this.id)">
 				
-				<label for="B-" class="FormCSS" id="B-e">B-</label>
-				<input class="FormInput" type="text" id="B-" value="70.00" onkeypress="createGradeEntry(this.id)" onkeyup="createGradeEntry(this.id)" onchange="calculateStanding(this.id)">
+				<label for="B-" class="FormCSS" id="Bme">B-</label>
+				<input type="text" name="Bm" id="Bm" value="70.00" class="FormInput" onkeypress="createGradeEntry(this.id)" onkeyup="createGradeEntry(this.id)" onchange="calculateStanding(this.id)">
 				
-				<label for="C+" class="FormCSS" id="C+e">C+</label>
-				<input class="FormInput" type="text" id="C+" value="65.00" onkeypress="createGradeEntry(this.id)" onkeyup="createGradeEntry(this.id)" onchange="calculateStanding(this.id)">
+				<label for="C+" class="FormCSS" id="Cpe">C+</label>
+				<input type="text" name="Cp" id="Cp" value="65.00" class="FormInput" onkeypress="createGradeEntry(this.id)" onkeyup="createGradeEntry(this.id)" onchange="calculateStanding(this.id)">
 				
-				<label for="C" class="FormCSS" id="Ce">C</label>
-				<input class="FormInput" type="text" id="C" value="60.00" onkeypress="createGradeEntry(this.id)" onkeyup="createGradeEntry(this.id)" onchange="calculateStanding(this.id)">
+				<label for="CC" class="FormCSS" id="Ce">C</label>
+				<input type="text" name="C" id="C" value="60.00" class="FormInput" onkeypress="createGradeEntry(this.id)" onkeyup="createGradeEntry(this.id)" onchange="calculateStanding(this.id)">
 				
-				<label for="C-" class="FormCSS" id="C-e">C-</label>
-				<input class="FormInput" type="text" id="C-" value="55.00" onkeypress="createGradeEntry(this.id)" onkeyup="createGradeEntry(this.id)" onchange="calculateStanding(this.id)">
+				<label for="C-" class="FormCSS" id="Cme">C-</label>
+				<input type="text" name="Cm" id="Cm" value="55.00" class="FormInput" onkeypress="createGradeEntry(this.id)" onkeyup="createGradeEntry(this.id)" onchange="calculateStanding(this.id)">
 				
-				<label for="D" class="FormCSS" id="De">D</label>
-				<input class="FormInput" type="text" id="D" value="50.00" onkeypress="createGradeEntry(this.id)" onkeyup="createGradeEntry(this.id)" onchange="calculateStanding(this.id)">	
+				<label for="DD" class="FormCSS" id="De">D</label>
+				<input type="text" name="D" id="D" value="50.00" class="FormInput" onkeypress="createGradeEntry(this.id)" onkeyup="createGradeEntry(this.id)" onchange="calculateStanding(this.id)">	
 				
-				<label for="F" class="FormCSS" id="Fe">F</label>
-				<input class="FormInput" type="text" id="F" value="0.00" readonly>
+				<label for="FF" class="FormCSS" id="Fe">F</label>
+				<input type="text" name="F" id="F" value="0.00" class="FormInput" readonly>
 
 				<%= submit_tag "Submit" %>
-
 			<% end %>
 		</div>
 	</div>
 	<div class="blue box" id="histogram">
 		<p class = "errorMessage" id= "hist">Histogram</p>
 		<table class="ralign">
-			<tr id="rA+">
-				<td class='grades' id="A+r">A+</td>
+			<tr id="rAp">
+				<td class='grades' id="Apr">A+</td>
 			</tr>
 		</table>
 		<table class="ralign">
@@ -72,13 +71,13 @@
 			</tr>
 		</table>
 		<table class="ralign">
-			<tr id="rA-">
-				<td class='grades' id="A-r">A-</td>
+			<tr id="rAm">
+				<td class='grades' id="Amr">A-</td>
 			</tr>
 		</table>
 		<table class="ralign">
-			<tr id="rB+">
-				<td class='grades' id="B+r">B+</td>
+			<tr id="rBp">
+				<td class='grades' id="Bpr">B+</td>
 			</tr>
 		</table>
 		<table class="ralign">
@@ -87,13 +86,13 @@
 			</tr>
 		</table>
 		<table class="ralign">
-			<tr id="rB-">
-				<td class='grades' id="B-r">B-</td>
+			<tr id="rBm">
+				<td class='grades' id="Bmr">B-</td>
 			</tr>
 		</table>
 		<table class="ralign">
-			<tr id="rC+">
-				<td class='grades' id="C+r">C+</td>
+			<tr id="rCp">
+				<td class='grades' id="Cpr">C+</td>
 			</tr>
 		</table>
 		<table class="ralign">
@@ -102,8 +101,8 @@
 			</tr>
 		</table>
 		<table class="ralign">
-			<tr id="rC-">
-				<td class='grades' id="C-r">C-</td>
+			<tr id="rCm">
+				<td class='grades' id="Cmr">C-</td>
 			</tr>
 		</table>
 		<table class="ralign">
@@ -117,12 +116,6 @@
 			</tr>
 		</table>
 	</div>
-
-<!-- 	<div id="submit">
-		<button onClick="createGradeEntry(this.id)">Submit</button>
-	</div> -->
-	<%# button_to "Submit", :method => "" %>
-
 
 </body>
 </html>

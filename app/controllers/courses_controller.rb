@@ -56,7 +56,7 @@ class CoursesController < ApplicationController
   def destroy
     @course.destroy
     respond_to do |format|
-      format.html { redirect_to courses_url, notice: 'Course was successfully destroyed.' }
+      format.html { redirect_to courses_url, notice: 'Course was successfully deleted.' }
       format.json { head :no_content }
 
     end
@@ -65,19 +65,59 @@ class CoursesController < ApplicationController
 
 
   def histogram
-    getEnrolledStudents = Enrollment.all
-
+    @getEnrolledStudents = Enrollment.all
     @getGrades = []
+    @getStudents = []
 
-    getEnrolledStudents.each do |getPercentage|
+    @getEnrolledStudents.each do |getPercentage|
       @getGrades << getPercentage.percentage
+      @getStudents << getPercentage.student.student_id
     end
 
-  end
+    @gradeCutoffs = []
+    @gradeLetters = ['Max', 'A+', 'A', 'A-', 'B+', 'B', 'B-', 'C+', 'C', 'C-', 'D', 'F']
 
-  
+    @gradeCutoffs << params[:Max]
+    @gradeCutoffs << params[:Ap]
+    @gradeCutoffs << params[:A]
+    @gradeCutoffs << params[:Am]
+    @gradeCutoffs << params[:Bp]
+    @gradeCutoffs << params[:B]
+    @gradeCutoffs << params[:Bm]
+    @gradeCutoffs << params[:Cp]
+    @gradeCutoffs << params[:C]
+    @gradeCutoffs << params[:Cm]
+    @gradeCutoffs << params[:D]
+    @gradeCutoffs << params[:F]
 
+      puts "hello hello hello"
+      puts params[:Ap]
+      puts params[:A]
+      puts params[:Am]
+      puts gradeLetters.at(0)
+      puts  @gradeLetters.at(1)
+      puts  @gradeLetters.at(2)
+      puts  @gradeLetters.at(3)
 
+      puts @gradeCutoffs.at(0)
+      puts @gradeCutoffs.at(1)
+      puts @gradeCutoffs.at(2)
+
+      updateDatabase()
+    end
+
+    def updateDatabase
+    # for i in 0..@getGrades.size
+    #   for j in 0..gradeCutoffs.size
+    #     if(@getGrades.at(i) < gradeCutoffs.at(j) && @getGrades.at(i) >= gradeCutoffs.at(j+1))
+    #       grade =  gradeLetters.at(j+1)
+    #       Enrollment.where(student_id: @getStudents.at(i)).update(lettergrade: grade)
+    #       break
+    #     end
+    #   end
+    # end
+
+end
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_course
