@@ -103,9 +103,7 @@ class CoursesController < ApplicationController
     puts @gradeCutoffs.at(1)
     puts @gradeCutoffs.at(2)
 
-
-    puts @getGrades.size
-
+    
 
     # for i in 0..@getGrades.size
     #   for j in 0..@gradeCutoffs.size
