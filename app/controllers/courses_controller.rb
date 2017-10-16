@@ -94,10 +94,10 @@ class CoursesController < ApplicationController
       puts params[:Ap]
       puts params[:A]
       puts params[:Am]
-      puts gradeLetters.at(0)
-      puts  @gradeLetters.at(1)
-      puts  @gradeLetters.at(2)
-      puts  @gradeLetters.at(3)
+      puts @gradeLetters.at(0)
+      puts @gradeLetters.at(1)
+      puts @gradeLetters.at(2)
+      puts @gradeLetters.at(3)
 
       puts @gradeCutoffs.at(0)
       puts @gradeCutoffs.at(1)
