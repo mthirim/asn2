@@ -2,6 +2,7 @@ Rails.application.routes.draw do
 
 	root 'students#index'
 	get 'courses/histogram'
+	get 'courses/updateLetterGrades'
 	get 'courses/edit'
 	get 'courses/index'
 	get 'courses/show'

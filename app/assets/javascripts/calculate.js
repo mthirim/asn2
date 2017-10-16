@@ -5,8 +5,6 @@ var gradeValue = [100.00, 95.00, 90.00, 85.00, 80.00, 75.00, 70.00, 65.00, 60.00
 var histogramResult = [0,0,0,0,0,0,0,0,0,0,0];
 var grades = [];
 
-
-
 function assignGrade(rubyGrades) {
 	for (i = 0; i < rubyGrades.length; i++) {
 		grades.push(rubyGrades[i]);
@@ -58,7 +56,7 @@ function changeColor(unique, colour, bColour) {
 function deleteHistogram() {
 	//outerloop = 11 different grades
 	for(var i = 0; i < histogramResult.length; i++) {
-			var row = document.getElementById("r"+gradeIndex[i+1]);
+		var row = document.getElementById("r"+gradeIndex[i+1]);
 		//innerloop = #of students in each grade
 		for (var j = 1; j <= histogramResult[i]; j++) {
 			row.deleteCell(-1);
@@ -143,7 +141,7 @@ function isBetween(number,unique,gradeIndex) {
 	//determine whether the input is in valid grade range
 	if ((num) > parseFloat(smaller) && num < parseFloat(larger)) {
 			result = true;	//the input is in valid range
-	}
+		}
 	return result;	//return
 }
 //check whether the input is empty which is caused by entering invalid input

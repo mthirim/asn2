@@ -65,58 +65,69 @@ class CoursesController < ApplicationController
 
 
   def histogram
+    render "courses/histogram"
+  end 
+
+  def updateLetterGrades
     @getEnrolledStudents = Enrollment.all
     @getGrades = []
-    @getStudents = []
+    getStudents = []
 
     @getEnrolledStudents.each do |getPercentage|
       @getGrades << getPercentage.percentage
-      @getStudents << getPercentage.student.student_id
+      getStudents << getPercentage.id
     end
 
-    @gradeCutoffs = []
-    @gradeLetters = ['Max', 'A+', 'A', 'A-', 'B+', 'B', 'B-', 'C+', 'C', 'C-', 'D', 'F']
+    ids = ['Max','Ap','A','Am','Bp','B','Bm','Cp','C','Cm','D','F']
+    gradeCutoffs = []
 
-    @gradeCutoffs << params[:Max]
-    @gradeCutoffs << params[:Ap]
-    @gradeCutoffs << params[:A]
-    @gradeCutoffs << params[:Am]
-    @gradeCutoffs << params[:Bp]
-    @gradeCutoffs << params[:B]
-    @gradeCutoffs << params[:Bm]
-    @gradeCutoffs << params[:Cp]
-    @gradeCutoffs << params[:C]
-    @gradeCutoffs << params[:Cm]
-    @gradeCutoffs << params[:D]
-    @gradeCutoffs << params[:F]
 
-    puts "hello hello hello"
-    puts params[:Ap]
-    puts params[:A]
-    puts params[:Am]
-    puts @gradeLetters.at(0)
-    puts @gradeLetters.at(1)
-    puts @gradeLetters.at(2)
-    puts @gradeLetters.at(3)
+    gradeCutoffs << params[:Max].to_f
+    gradeCutoffs << params[:Ap].to_f
+    gradeCutoffs << params[:A].to_f
+    gradeCutoffs << params[:Am].to_f
+    gradeCutoffs << params[:Bp].to_f
+    gradeCutoffs << params[:B].to_f
+    gradeCutoffs << params[:Bm].to_f
+    gradeCutoffs << params[:Cp].to_f
+    gradeCutoffs << params[:C].to_f
+    gradeCutoffs << params[:Cm].to_f
+    gradeCutoffs << params[:D].to_f
+    gradeCutoffs << params[:F].to_f
 
-    puts @gradeCutoffs.at(0)
-    puts @gradeCutoffs.at(1)
-    puts @gradeCutoffs.at(2)
-
-    
-
-    # for i in 0..@getGrades.size
-    #   for j in 0..@gradeCutoffs.size
-    #     if(@getGrades.at(i) < @gradeCutoffs.at(j) && @getGrades.at(i) >= @gradeCutoffs.at(j+1))
-    #       grade =  @gradeLetters.at(j+1)
-    #       Enrollment.where(student_id: @getStudents.at(i)).update(lettergrade: grade)
-    #       break
-    #     end
-    #   end
-    # end
-
+    validateInput (gradeCutoffs)
+    Enrollment.all.each do |current|
+      setGrade(gradeCutoffs, current)
+    end
   end
-  private
+
+  def validateInput(gradesLowEnd)
+    counter = 0
+    gradesLowEnd.each do |grades|
+      if grades == 0
+        counter+= 1
+      end
+    end
+    if counter > 0
+      render "courses/histogram"
+   end
+ end
+
+ def setGrade(cutoff,  curr)
+  gradeLetters = ['Max', 'A+', 'A', 'A-', 'B+', 'B', 'B-', 'C+', 'C', 'C-', 'D', 'F']
+  for i in 0..cutoff.size-1
+    grade = gradeLetters.at(i+1)
+    if curr.percentage == 100
+      Enrollment.where(id: curr.id).update(lettergrade: 'A+')
+    else 
+      if(curr.percentage < cutoff.at(i) && curr.percentage >= cutoff.at(i+1))
+        Enrollment.where(id: curr.id).update(lettergrade: grade)
+        break
+      end
+    end
+  end
+end
+private
     # Use callbacks to share common setup or constraints between actions.
     def set_course
       @course = Course.find(params[:id])

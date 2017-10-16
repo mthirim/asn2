@@ -15,45 +15,47 @@
 	<p class="errorMessage" id="main"></p>
 	<div class="blue box" id="gradesWeight">
 		<div class="blue box" id="grades">
-			<%= form_tag(:controller => "courses", :action => "histogram", :method => "POST") do %>
-				<p class = "errorMessage" id= "entry">Lower bound</p>
-				<label for="Max" class="FormCSS" id="maxe">Max</label>
-				<input type="text" name="Max" id="Max" value="100" class="FormInput" readonly>
-				
-				<label for="A+" class="FormCSS" id="Ape">A+</label>
-				<input type="text"  name="Ap" id="Ap" value="95.00" class="FormInput" onkeypress="createGradeEntry(this.id)" onkeyup="createGradeEntry(this.id)" onchange="calculateStanding(this.id)">
-				
-				<label for="AA" class="FormCSS" id="Ae">A</label>
-				<input type="text" name="A" id="A" value="90.00" class="FormInput" onkeypress="createGradeEntry(this.id)" onkeyup="createGradeEntry(this.id)" onchange="calculateStanding(this.id)">
-				
-				<label for="A-" class="FormCSS" id="Ame">A-</label>
-				<input type="text" name="Am" id="Am" value="85.00" class="FormInput" onkeypress="createGradeEntry(this.id)" onkeyup="createGradeEntry(this.id)" onchange="calculateStanding(this.id)">
-				
-				<label for="B+" class="FormCSS" id="Bpe">B+</label>
-				<input type="text" name="Bp" id="Bp" value="80.00" class="FormInput" onkeypress="createGradeEntry(this.id)" onkeyup="createGradeEntry(this.id)" onchange="calculateStanding(this.id)">
-				
-				<label for="BB" class="FormCSS" id="Be">B</label>
-				<input type="text" name="B" id="B" value="75.00" class="FormInput" onkeypress="createGradeEntry(this.id)" onkeyup="createGradeEntry(this.id)" onchange="calculateStanding(this.id)">
-				
-				<label for="B-" class="FormCSS" id="Bme">B-</label>
-				<input type="text" name="Bm" id="Bm" value="70.00" class="FormInput" onkeypress="createGradeEntry(this.id)" onkeyup="createGradeEntry(this.id)" onchange="calculateStanding(this.id)">
-				
-				<label for="C+" class="FormCSS" id="Cpe">C+</label>
-				<input type="text" name="Cp" id="Cp" value="65.00" class="FormInput" onkeypress="createGradeEntry(this.id)" onkeyup="createGradeEntry(this.id)" onchange="calculateStanding(this.id)">
-				
-				<label for="CC" class="FormCSS" id="Ce">C</label>
-				<input type="text" name="C" id="C" value="60.00" class="FormInput" onkeypress="createGradeEntry(this.id)" onkeyup="createGradeEntry(this.id)" onchange="calculateStanding(this.id)">
-				
-				<label for="C-" class="FormCSS" id="Cme">C-</label>
-				<input type="text" name="Cm" id="Cm" value="55.00" class="FormInput" onkeypress="createGradeEntry(this.id)" onkeyup="createGradeEntry(this.id)" onchange="calculateStanding(this.id)">
-				
-				<label for="DD" class="FormCSS" id="De">D</label>
-				<input type="text" name="D" id="D" value="50.00" class="FormInput" onkeypress="createGradeEntry(this.id)" onkeyup="createGradeEntry(this.id)" onchange="calculateStanding(this.id)">	
-				
-				<label for="FF" class="FormCSS" id="Fe">F</label>
-				<input type="text" name="F" id="F" value="0.00" class="FormInput" readonly>
+			<%= form_tag(:controller => "courses", :action => "updateLetterGrades", :method => "POST") do %>
+			<p class = "errorMessage" id= "entry">Lower bound</p>
+			<label for="Max" class="FormCSS" id="maxe">Max</label>
+			<input type="text" name="Max" id="Max" value="100" class="FormInput" readonly>
 
-				<%= submit_tag "Submit" %>
+			<label for="A+" class="FormCSS" id="Ape">A+</label>
+			<input type="text"  name="Ap" id="Ap" value="95.00" class="FormInput" min="0" onkeypress="createGradeEntry(this.id)" onkeyup="createGradeEntry(this.id)" onchange="calculateStanding(this.id)">
+
+			<label for="AA" class="FormCSS" id="Ae">A</label>
+			<input type="text" name="A" id="A" value="90.00" class="FormInput" min="0" onkeypress="createGradeEntry(this.id)" onkeyup="createGradeEntry(this.id)" onchange="calculateStanding(this.id)">
+
+			<label for="A-" class="FormCSS" id="Ame">A-</label>
+			<input type="text" name="Am" id="Am" value="85.00" class="FormInput" min="0" onkeypress="createGradeEntry(this.id)" onkeyup="createGradeEntry(this.id)" onchange="calculateStanding(this.id)">
+
+			<label for="B+" class="FormCSS" id="Bpe">B+</label>
+			<input type="text" name="Bp" id="Bp" value="80.00" class="FormInput" min="0" onkeypress="createGradeEntry(this.id)" onkeyup="createGradeEntry(this.id)" onchange="calculateStanding(this.id)">
+
+			<label for="BB" class="FormCSS" id="Be">B</label>
+			<input type="text" name="B" id="B" value="75.00" class="FormInput" min="0" onkeypress="createGradeEntry(this.id)" onkeyup="createGradeEntry(this.id)" onchange="calculateStanding(this.id)">
+
+			<label for="B-" class="FormCSS" id="Bme">B-</label>
+			<input type="text" name="Bm" id="Bm" value="70.00" class="FormInput" min="0" onkeypress="createGradeEntry(this.id)" onkeyup="createGradeEntry(this.id)" onchange="calculateStanding(this.id)">
+
+			<label for="C+" class="FormCSS" id="Cpe">C+</label>
+			<input type="text" name="Cp" id="Cp" value="65.00" class="FormInput" min="0" onkeypress="createGradeEntry(this.id)" onkeyup="createGradeEntry(this.id)" onchange="calculateStanding(this.id)">
+
+			<label for="CC" class="FormCSS" id="Ce">C</label>
+			<input type="text" name="C" id="C" value="60.00" class="FormInput" min="0" onkeypress="createGradeEntry(this.id)" onkeyup="createGradeEntry(this.id)" onchange="calculateStanding(this.id)">
+
+			<label for="C-" class="FormCSS" id="Cme">C-</label>
+			<input type="text" name="Cm" id="Cm" value="55.00" class="FormInput" min="0" onkeypress="createGradeEntry(this.id)" onkeyup="createGradeEntry(this.id)" onchange="calculateStanding(this.id)">
+
+			<label for="DD" class="FormCSS" id="De">D</label>
+			<input type="text" name="D" id="D" value="50.00" class="FormInput" min="0" onkeypress="createGradeEntry(this.id)" onkeyup="createGradeEntry(this.id)" onchange="calculateStanding(this.id)">	
+
+			<label for="FF" class="FormCSS" id="Fe">F</label>
+			<input type="text" name="F" id="F" value="0.00" class="FormInput" readonly>
+
+			<%= submit_tag "Submit" %>
+				
+			</script>
 			<% end %>
 		</div>
 	</div>
