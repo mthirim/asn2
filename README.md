@@ -1,9 +1,7 @@
 # README
+This file documents the prerequisites and the procedure to execute the program.
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
+#### The prerequisites are as follows:
 
 * Ruby version
 
